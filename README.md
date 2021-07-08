@@ -1,1 +1,2 @@
 # GroupProj_Music
+A webiste where the user can search for songs and the search bar will provide the searched song from multiple different sites. The user will input key words and through the use of the SoundCloud and YouTube APIs the website will respond with the most closely related matches.
