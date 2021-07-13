@@ -21,11 +21,13 @@
   </head>
 
   <body>
+     <!-- Header to store the Title and dropdown -->
     <div class = "header">
         <header>
             <h3 class = "big-font">
                 Music Aggregator
             </h3>
+             <!-- Dropdown using bulma commands -->
             <div class="dropdown">
                 <div class="dropdown-trigger">
                 <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -37,6 +39,7 @@
             </div>
                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
+                      <!--Items go here-->
                         <a href="#" class="dropdown-item">
                          History 1
                         </a>
@@ -59,9 +62,10 @@
     </div>
 
     <main>
+      <!--Form that JavaScript will read from-->
       <form class="container">
-        <input type="text" placeholder="Search song name here!">
-        <button class="">
+        <input id="search-input" type="text" placeholder="Search song name here!">
+        <button id="search-btn">
           Search
         </button>
       </form>
