@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+}
+
+
+.big-font {
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.header {
+    width: 98%;
+    height: 100px;
+    background-color: steelblue;
+}
