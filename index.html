@@ -16,67 +16,78 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel = "stylesheet" href="assets/css/style.css">
     <title>Music Project</title>
   </head>
 
   <body>
-    <header>
-      <h3>
-        Music Aggregator
-      </h3>
-      <div class="dropdown is-active">
-        <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>Dropdown button</span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <a href="#" class="dropdown-item">
-              Dropdown item
-            </a>
-            <a class="dropdown-item">
-              Other dropdown item
-            </a>
-            <a href="#" class="dropdown-item is-active">
-              Active dropdown item
-            </a>
-            <a href="#" class="dropdown-item">
-              Other dropdown item
-            </a>
-            <hr class="dropdown-divider">
-            <a href="#" class="dropdown-item">
-              With a divider
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+     <!-- Header to store the Title and dropdown -->
+    <div class = "header">
+        <header>
+            <h3 class = "big-font">
+                Music Aggregator
+            </h3>
+             <!-- Dropdown using bulma commands -->
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Dropdown button</span>
+                    <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <!--Items go here-->
+                        <a href="#" class="dropdown-item">
+                         History 1
+                        </a>
+                        <a href="#" class="dropdown-item">
+                         History 2
+                        </a>
+                        <a href="#" class="dropdown-item">
+                         History 3
+                        </a>
+                        <a href="#" class="dropdown-item">
+                         History 4
+                        </a>
+                        <a href="#" class="dropdown-item">
+                         History 5
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
 
     <main>
-      <form class="container">
-        <input type="text" placeholder="Search song name here!" id="songSearch">
-        <button class="">
+      <!--Form that JavaScript will read from-->
+      <form id="search-form">
+        <input class="left-box" id="search-input" type="text" placeholder="Search song name here!">
+        <button class="right-box" id="search-btn">
           Search
         </button>
       </form>
       <ul id="song-list">
+        <!--use class="list-item"-->
+        <li class="list-item">placeholder</li>
+        <li class="list-item">placeholder</li>
         <!--<li> elements go here-->
       </ul>
     </main>
 
-    <footer class="">
-      <p>
+    <footer>
+      <p class="reference">
         <!--Footer elements-->
+        Made by Scott, Pasgen and Seth
       </p>
     </footer>
 
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/sc.js"></script>
+    <script src="assets/js/yt.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/js/script.js"></script>
   </body>
 </html>

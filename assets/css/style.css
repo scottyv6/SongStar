@@ -1,0 +1,89 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+}
+
+
+.big-font {
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: left;
+    padding: 20px;
+    color: #dddddd;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: steelblue;
+}
+
+.dropdown {
+    float: right;
+    margin-right: 20px;
+    bottom: 50px;
+}
+
+#search-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+/*the form input*/
+.left-box {
+    width: 20%;
+    height: 50px;
+}
+
+/*the form button*/
+.right-box {
+    width: 5%;
+    height: 50px;
+}
+
+#song-list {
+   width: 40%;
+   text-align: center;
+   font-size: 20px;
+}
+
+/*use this to place the list items on the page correctly*/
+.list-item {
+    width: auto;
+    height: 40px;
+    border: solid;
+    border-color: black;
+    margin: 5px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: steelblue;
+}
+
+.reference {
+    padding: 10px;
+    color: black;
+}
