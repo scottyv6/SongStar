@@ -39,7 +39,7 @@ body {
     bottom: 50px;
 }
 
-.form-container {
+#search-form {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
