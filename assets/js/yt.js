@@ -1,10 +1,7 @@
-const userFormEl = document.querySelector('#searchForm');
-const searchInputEL = document.querySelector('#search-input');
 const APIKey = "AIzaSyBdUapgfOCqEn7oB43ozOJj7MWwKriUruA";
-const clientID = "124008613381-hrh64fb94g4elkr14tsabe326nk4slku.apps.googleusercontent.com";
-const clientSecret = "fsLV_VYmhWVi9tcoYMU6NwuN";
-const searchBtn = $("#search-btn");
-
+//const clientID = "124008613381-hrh64fb94g4elkr14tsabe326nk4slku.apps.googleusercontent.com";
+//const clientSecret = "fsLV_VYmhWVi9tcoYMU6NwuN";
+const userFormEl = document.getElementById("search-btn");
 
 
 gapi.load("client", loadClient);
@@ -18,25 +15,28 @@ function loadClient() {
 
 
   // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
+  function execute(event) {
+      event.preventDefault();
+    var searchParam = document.getElementById("search-input").value;
     return gapi.client.youtube.search.list({
-      "q": "paint it black"
+      "q": searchParam
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
+                console.log("Vid ID ", response.result.items[0].id.videoId);
+                let vidId = response.result.items[0].id.videoId
+                createLink(vidId);
               },
               function(err) { console.error("Execute error", err); });
   }
  
- /*$(document).ready (function (){
-    gapi.load("client:auth2", function() {
-        gapi.auth2.init({client_id: clientID});
-        authenticate().then(loadClient)
-      });*/
-    
+ function createLink(vidId) {
+     const tag = document.createElement('a');
+
+ }
+
   userFormEl.addEventListener("click",execute)
   
 
 
-searchBtn.on("click",)
