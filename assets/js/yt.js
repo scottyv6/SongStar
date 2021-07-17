@@ -24,15 +24,23 @@ function loadClient() {
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-                console.log("Vid ID ", response.result.items[0].id.videoId);
                 let vidId = response.result.items[0].id.videoId
                 createLink(vidId, searchParam, songListEl);
               },
               function(err) { console.error("Execute error", err); });
   }
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
  
  function createLink(vidId, searchParam, parent) {
+    // if more than 1 link, clear the links
+    if (parent.childElementCount > 1) {
+      removeAllChildNodes(parent);
+    }
     const li = document.createElement('li')
     const tag = document.createElement('a');
     const url = `https://www.youtube.com/watch?v=${vidId}`;

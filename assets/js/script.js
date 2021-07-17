@@ -36,7 +36,7 @@ function createHistory (searchParam,url) {
 //Function to add a searched item to the beginning of the array in local storage
 // and limit size of history to 10 items.
 function storeHistory (url) {
-  const searches = [];
+  let searches = [];
   // retrieves searches array from local storage
   searches = getSearches();
   //adds url to the beginning ofthe searches array
