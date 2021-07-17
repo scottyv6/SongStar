@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
+    <!-- links to css and our chosen APIs -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link
       rel="stylesheet"
@@ -38,6 +39,10 @@
                 </button>
             </div>
                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
+
+                    <div class="dropdown-content">
+                      <!--History items go here-->
+=======
                     <!-- <div class="dropdown-content">   added id="history"  -->
                     <div class="dropdown-content" id="history">
                       <!--Items go here-->
@@ -63,27 +68,36 @@
     </div>
 
     <main>
-      <!--Form that JavaScript will read from-->
+      <!-- Form that JavaScript will read from -->
       <form id="search-form">
         <input class="left-box" id="search-input" type="text" placeholder="Search song name here!">
         <button class="right-box" id="search-btn">
           Search
         </button>
       </form>
+      <!-- use class="list-item" -->
       <ul id="song-list">
-        <!--use class="list-item"-->
-        <li class="list-item">placeholder</li>
-        <li class="list-item">placeholder</li>
-        <!--<li> elements go here-->
+      <!-- <li> elements go here -->
       </ul>
     </main>
 
+    <!-- Footer elements -->
     <footer>
-      <p class="reference">
-        <!--Footer elements-->
+      <p>        
         Made by Scott, Pasgen and Seth
       </p>
-    </footer>
+
+    <!-- links to Youtube and Vimeo -->
+      <h4 class="links">
+        <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        <a href="https://vimeo.com/" target="_blank">Vimeo</a>
+      </h4>
+      </footer>
+
+    <!-- links to scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/yt.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
