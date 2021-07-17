@@ -24,3 +24,8 @@ body {
     height: 100px;
     background-color: steelblue;
 }
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
