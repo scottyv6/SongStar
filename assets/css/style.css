@@ -1,13 +1,19 @@
+* {
+    color: black;
+}
+
+/*makes the page easy to format for the footer*/
 html {
     position: relative;
     min-height: 100%;
 }
-
+/*sets the page as a flex-box*/
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 
 body {
     margin: 0;
@@ -17,10 +23,8 @@ body {
     justify-content: flex-start;
 }
 
-
 .big-font {
     font-size: 32px;
-    font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     text-align: left;
     padding: 20px;
@@ -33,12 +37,14 @@ body {
     background-color: #0ba8a8;
 }
 
+/*positions the form where we want it on the page*/
 .dropdown {
     float: right;
     margin-right: 20px;
-    bottom: 50px;
+    bottom: 58px;
 }
 
+/*our JS pulls from this form*/
 #search-form {
     width: 100%;
     display: flex;
@@ -76,6 +82,7 @@ body {
     background-color: white;
 }
 
+/*puts the footer at the bottom of the page*/
 footer {
     position: absolute;
     bottom: 0;
@@ -84,11 +91,7 @@ footer {
     background-color: #0ba8a8;
 }
 
-.reference {
-    padding: 10px;
-    color: black;
-}
-
+/*positions the links to the right side in line with our names*/
 .links {
     position: absolute;
     margin: 20px;
