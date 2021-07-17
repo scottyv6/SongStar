@@ -2,6 +2,7 @@ const APIKey = "AIzaSyBdUapgfOCqEn7oB43ozOJj7MWwKriUruA";
 //const clientID = "124008613381-hrh64fb94g4elkr14tsabe326nk4slku.apps.googleusercontent.com";
 //const clientSecret = "fsLV_VYmhWVi9tcoYMU6NwuN";
 const userFormEl = document.getElementById("search-btn");
+const songListEl = document.getElementById("song-list");
 
 
 gapi.load("client", loadClient);
@@ -26,14 +27,25 @@ function loadClient() {
                 console.log("Response", response);
                 console.log("Vid ID ", response.result.items[0].id.videoId);
                 let vidId = response.result.items[0].id.videoId
-                createLink(vidId);
+                createLink(vidId, searchParam, songListEl);
               },
               function(err) { console.error("Execute error", err); });
   }
  
- function createLink(vidId) {
-     const tag = document.createElement('a');
-
+ function createLink(vidId, searchParam, parent) {
+    const li = document.createElement('li')
+    const tag = document.createElement('a');
+    const url = `https://www.youtube.com/watch?v=${vidId}`;
+    tag.textContent = searchParam;
+    tag.setAttribute('href', url);
+    tag.setAttribute('target', '_blank');
+    li.setAttribute('class', 'list-item');
+    li.appendChild(tag);
+    parent.appendChild(li);
+    // Add url to local storage
+    storeHistory (url);
+    // Add url to search list
+    createHistory (searchParam,url);
  }
 
   userFormEl.addEventListener("click",execute)
