@@ -1,5 +1,3 @@
-//var APIKey = "dcb181604732ed5c2eafc5ab0d4d96b6";
-
 const clientIdentifier = "50894b44081b3e60c7f38f3ee38c9509b0f40411";
 const clientSecret = "4OgG4BCdLIQMM//ZE3bpkbAvQuxnakkCHK09wVrgJF8+Cnj7TZVr3TaKwUPdHZMJLLbRV/pR1f1ymkE4JkHF93B6RlHRDoBlenos0lJkmbqXL4hQRjdrLJUk5wp69HE5"
 
@@ -12,8 +10,12 @@ console.log(basic);
 var accessToken;
 
 var searchBtn = $('#search-btn');
-
 var searchInputValue = $('#search-input');
+var songListUl = $('#song-list');
+
+var searches = [];
+
+
 
 function AuthorizationVimeo() {
 
@@ -41,16 +43,56 @@ $(document).ready(function() {
 })
 
 
-searchBtn.on('click', function() {
-    
+searchBtn.on('click', function(event) {
+    event.preventDefault();
+    var vimeoSearchInput = searchInputValue.val().trim();
+
     if (!accessToken) {
          Authorization();
      } else {
-        searchVimeo(searchInputValue);
+        searchVimeo(vimeoSearchInput);
 
      }
 });
   
-function searchVimeo() {
+function searchVimeo(searchInputValue) {
 
-}
+    var vimeoQueryURL = "https://api.vimeo.com/videos?query=" + searchInputValue + "&per_page=1";
+
+    fetch(vimeoQueryURL,{
+      method: 'get',
+      headers: {
+          'Authorization': 'Bearer '+accessToken,
+      }
+    })
+        .then(function (response){
+            return response.json();
+    })
+        .then(function (vimeoData){
+            console.log(vimeoData);
+
+            //for (i = 0; i <searchArray.length ; i++) {
+              var songListEl = $('<li>');
+              var songLink = $('<a>');
+              var vimeoIcon = $('<img>');
+
+              songLink.text(vimeoData.data[0].name);
+              console.log(vimeoData.data[0].name);
+              vimeoIcon.attr("src", "./assets/images/vimeo_website_icon.png");
+              vimeoIcon.css({"float": "left", "height": "30px", "width": "30px"});
+              //songLink.append(vimeoData.data[0].link);
+              songLink.attr("target", "_blank" );
+              //songLink.css('text-decoration', none);
+              
+
+
+              songLink.attr("href", vimeoData.data[0].link );
+              songListEl.append(songLink);
+              songListEl.append(vimeoIcon);
+              songListUl.append(songListEl);
+
+
+
+    })
+
+};
