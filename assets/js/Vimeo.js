@@ -83,7 +83,7 @@ function searchVimeo(searchInputValue) {
               //songLink.append(vimeoData.data[0].link);
               songLink.attr("target", "_blank" );
               //songLink.css('text-decoration', none);
-              
+              songListEl.addClass("list-item");
 
 
               songLink.attr("href", vimeoData.data[0].link );

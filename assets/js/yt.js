@@ -36,10 +36,15 @@ function loadClient() {
     const li = document.createElement('li')
     const tag = document.createElement('a');
     const url = `https://www.youtube.com/watch?v=${vidId}`;
+    const icon = document.createElement('img');
     tag.textContent = searchParam;
     tag.setAttribute('href', url);
     tag.setAttribute('target', '_blank');
     li.setAttribute('class', 'list-item');
+    icon.setAttribute('src', './assets/images/youtube.png');
+    icon.style.float = 'left';
+    icon.style.height = '30px';
+    icon.style.width = '30px';
     li.appendChild(tag);
     parent.appendChild(li);
     // Add url to local storage
