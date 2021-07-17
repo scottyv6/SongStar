@@ -46,6 +46,7 @@ function loadClient() {
     icon.style.height = '30px';
     icon.style.width = '30px';
     li.appendChild(tag);
+    li.appendChild(icon);
     parent.appendChild(li);
     // Add url to local storage
     storeHistory (url);
