@@ -49,8 +49,10 @@ function loadClient() {
     li.appendChild(icon);
     parent.appendChild(li);
     // Add url to local storage
-    storeHistory (url);
+    console.log('calling storeHistory');
+    storeHistory (searchParam, url);
     // Add url to search list
+    console.log ('calling createHistory');
     createHistory (searchParam,url);
  }
 
