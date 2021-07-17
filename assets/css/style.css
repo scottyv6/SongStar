@@ -88,3 +88,10 @@ footer {
     padding: 10px;
     color: black;
 }
+
+.links {
+    position: absolute;
+    margin: 20px;
+    top: -12px;
+    right: 20px;
+}
