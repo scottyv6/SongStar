@@ -52,10 +52,12 @@ function removeAllChildNodes(parent) {
     icon.style.height = '30px';
     icon.style.width = '30px';
     li.appendChild(tag);
+    li.appendChild(icon);
     parent.appendChild(li);
     // Add url to local storage
     storeHistory (searchParam, url);
     // Add url to search list
+    console.log ('calling createHistory');
     createHistory (searchParam,url);
  }
 
