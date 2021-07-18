@@ -10,6 +10,8 @@ The program will redirect me to the URL in a seperate window
     When I click on the 'History' dropdown
 The box will drop down with links to the videos
 
+
+<!--we did all the work through a single repository-->
 **Repository link**
 https://github.com/scottyv6/SongStar
 
@@ -17,7 +19,9 @@ https://github.com/scottyv6/SongStar
 https://scottyv6.github.io/SongStar/
 
 **screenshots**
+<!--the website as it is when opened-->
 ![screenshot](assets/images/project-ss-closed.png)
 
-![screenshot](project-ss-open.png)
+<!--the website once used a few times-->
+![screenshot](assets/images/project-ss-open.png)
 
