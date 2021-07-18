@@ -1,6 +1,4 @@
 const APIKey = "AIzaSyBdUapgfOCqEn7oB43ozOJj7MWwKriUruA";
-//const clientID = "124008613381-hrh64fb94g4elkr14tsabe326nk4slku.apps.googleusercontent.com";
-//const clientSecret = "fsLV_VYmhWVi9tcoYMU6NwuN";
 const userFormEl = document.getElementById("search-btn");
 const songListEl = document.getElementById("song-list");
 
@@ -24,15 +22,23 @@ function loadClient() {
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-                console.log("Vid ID ", response.result.items[0].id.videoId);
                 let vidId = response.result.items[0].id.videoId
                 createLink(vidId, searchParam, songListEl);
               },
               function(err) { console.error("Execute error", err); });
   }
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
  
  function createLink(vidId, searchParam, parent) {
+    // if more than 1 link, clear the links
+    if (parent.childElementCount > 1) {
+      removeAllChildNodes(parent);
+    }
     const li = document.createElement('li')
     const tag = document.createElement('a');
     const url = `https://www.youtube.com/watch?v=${vidId}`;
@@ -46,10 +52,12 @@ function loadClient() {
     icon.style.height = '30px';
     icon.style.width = '30px';
     li.appendChild(tag);
+    li.appendChild(icon);
     parent.appendChild(li);
     // Add url to local storage
-    storeHistory (url);
+    storeHistory (searchParam, url);
     // Add url to search list
+    console.log ('calling createHistory');
     createHistory (searchParam,url);
  }
 
