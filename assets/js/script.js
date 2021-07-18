@@ -16,7 +16,6 @@ function getSearches() {
 function loadHistory () {
   let searches = getSearches();
   if (searches) {
-<
     for (let i = 0; i < searches.length; i++) {
       createHistory(searches[i].name,searches[i].url);
 
