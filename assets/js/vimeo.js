@@ -85,11 +85,17 @@ function searchVimeo(searchInputValue) {
               //songLink.css('text-decoration', none);
               songListEl.addClass("list-item");
 
+              const url = $("href", vimeoData.data[0].link)
+              songLink.textContent = searchParam
 
-              songLink.attr("href", vimeoData.data[0].link );
+              songLink.attr("href", vimeoData.data[0].link);
               songListEl.append(songLink);
               songListEl.append(vimeoIcon);
               songListUl.append(songListEl);
+
+              storeHistory (url);
+              
+              createHistory (searchParam, url);
 
 
 
