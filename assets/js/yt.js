@@ -1,6 +1,4 @@
 const APIKey = "AIzaSyBdUapgfOCqEn7oB43ozOJj7MWwKriUruA";
-//const clientID = "124008613381-hrh64fb94g4elkr14tsabe326nk4slku.apps.googleusercontent.com";
-//const clientSecret = "fsLV_VYmhWVi9tcoYMU6NwuN";
 const userFormEl = document.getElementById("search-btn");
 const songListEl = document.getElementById("song-list");
 

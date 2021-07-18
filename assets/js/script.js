@@ -25,7 +25,6 @@ function loadHistory () {
 // Function to create an item in the history dropdown list. It is passed a url.
 function createHistory (searchParam,url) {
   const tag = document.createElement('a');
-  console.log('got here 1');
   tag.textContent = searchParam;
   tag.setAttribute('href', 'url');
   tag.setAttribute('target', '_blank');
@@ -48,5 +47,3 @@ function storeHistory (url) {
   //store the searches array in local storage 
   localStorage.setItem("searches", JSON.stringify(searches));
 }
-createHistory ('fred');
-console.log('got here 2');
