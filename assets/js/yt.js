@@ -54,7 +54,7 @@ function removeAllChildNodes(parent) {
     li.appendChild(tag);
     parent.appendChild(li);
     // Add url to local storage
-    storeHistory (url);
+    storeHistory (searchParam, url);
     // Add url to search list
     createHistory (searchParam,url);
  }
