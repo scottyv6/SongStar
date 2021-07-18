@@ -71,7 +71,6 @@ function searchVimeo(searchInputValue) {
         .then(function (vimeoData){
             console.log(vimeoData);
 
-            //for (i = 0; i <searchArray.length ; i++) {
               var songListEl = $('<li>');
               var songLink = $('<a>');
               var vimeoIcon = $('<img>');
@@ -80,25 +79,20 @@ function searchVimeo(searchInputValue) {
               console.log(vimeoData.data[0].name);
               vimeoIcon.attr("src", "./assets/images/vimeo_website_icon.png");
               vimeoIcon.css({"float": "left", "height": "30px", "width": "30px"});
-              //songLink.append(vimeoData.data[0].link);
               songLink.attr("target", "_blank" );
-              //songLink.css('text-decoration', none);
               songListEl.addClass("list-item");
 
-              const url = $("href", vimeoData.data[0].link)
-              songLink.textContent = searchParam
-
+              const url = vimeoData.data[0].link;
+              var searchParam = vimeoData.data[0].name;
+              
               songLink.attr("href", vimeoData.data[0].link);
               songListEl.append(songLink);
               songListEl.append(vimeoIcon);
               songListUl.append(songListEl);
 
-              storeHistory (url);
+              storeHistory (searchParam, url);
               
               createHistory (searchParam, url);
-
-
-
     })
 
 };
