@@ -20,8 +20,8 @@ https://scottyv6.github.io/SongStar/
 
 **screenshots**
 <!--the website as it is when opened-->
-![screenshot](assets/images/project-ss-closed.png)
+
 
 <!--the website once used a few times-->
-![screenshot](assets/images/project-ss-open.png)
+
 
