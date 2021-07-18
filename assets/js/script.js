@@ -16,7 +16,6 @@ function getSearches() {
 function loadHistory () {
   let searches = getSearches();
   if (searches) {
-<
     for (let i = 0; i < searches.length; i++) {
       createHistory(searches[i].name,searches[i].url);
 
@@ -43,6 +42,7 @@ function storeHistory (searchName, url) {
   //adds url to the beginning ofthe searches array
   searches.unshift({name: searchName, url: url});
   // while the searches array is greater then 10 one item will been removed from the end of the array.
+  console.log('searches.length ', searches.length);
   while (searches.length > 10) {
     searches.pop();
   }
