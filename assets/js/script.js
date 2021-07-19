@@ -31,6 +31,11 @@ function createHistory (searchParam,url) {
   tag.setAttribute('target', '_blank');
   tag.setAttribute('class', 'dropdown-item');
   historyContainer.appendChild(tag);
+  // if number of chldren greater than 10 then remove first child element
+  if (historyContainer.childElementCount > 10) {
+    historyContainer.removeChild(historyContainer.firstChild);
+  }
+
 }
 
 //Function to add a searched item to the beginning of the array in local storage
@@ -43,7 +48,7 @@ function storeHistory (searchName, url) {
   searches.unshift({name: searchName, url: url});
   // while the searches array is greater then 10 one item will been removed from the end of the array.
   console.log('searches.length ', searches.length);
-  while (searches.length > 10) {
+  while (searches.length > 9) {
     searches.pop();
   }
   //store the searches array in local storage 
