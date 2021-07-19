@@ -1,6 +1,7 @@
 const APIKey = "AIzaSyBdUapgfOCqEn7oB43ozOJj7MWwKriUruA";
 const userFormEl = document.getElementById("search-btn");
 const songListEl = document.getElementById("song-list");
+let searchEl = document.getElementById("search-input")
 
 
 gapi.load("client", loadClient);
@@ -16,7 +17,7 @@ function loadClient() {
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute(event) {
       event.preventDefault();
-    var searchParam = document.getElementById("search-input").value;
+    var searchParam = searchEl.value;
     return gapi.client.youtube.search.list({
       "q": searchParam
     })
@@ -39,6 +40,9 @@ function removeAllChildNodes(parent) {
     if (parent.childElementCount > 1) {
       removeAllChildNodes(parent);
     }
+    // clear the search text
+    console.log('searchEl.value ', searchEl.value);
+    searchEl.value = "";
     const li = document.createElement('li')
     const tag = document.createElement('a');
     const url = `https://www.youtube.com/watch?v=${vidId}`;
@@ -57,7 +61,6 @@ function removeAllChildNodes(parent) {
     // Add url to local storage
     storeHistory (searchParam, url);
     // Add url to search list
-    console.log ('calling createHistory');
     createHistory (searchParam,url);
  }
 
